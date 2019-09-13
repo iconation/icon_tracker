@@ -1,0 +1,64 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package com.dfg.icon.web.v0.dto;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+public class AccessLogKey
+{
+    String api;
+    
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString((Object)this, ToStringStyle.JSON_STYLE);
+    }
+    
+    public String getApi() {
+        return this.api;
+    }
+    
+    public void setApi(final String api) {
+        this.api = api;
+    }
+    
+    @Override
+    public boolean equals(final Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof AccessLogKey)) {
+            return false;
+        }
+        final AccessLogKey other = (AccessLogKey)o;
+        if (!other.canEqual(this)) {
+            return false;
+        }
+        final Object this$api = this.getApi();
+        final Object other$api = other.getApi();
+        if (this$api == null) {
+            if (other$api == null) {
+                return true;
+            }
+        }
+        else if (this$api.equals(other$api)) {
+            return true;
+        }
+        return false;
+    }
+    
+    protected boolean canEqual(final Object other) {
+        return other instanceof AccessLogKey;
+    }
+    
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $api = this.getApi();
+        result = result * 59 + (($api == null) ? 43 : $api.hashCode());
+        return result;
+    }
+}

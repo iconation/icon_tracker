@@ -1,0 +1,68 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package com.dfg.icon.web.v0.dto;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+public class SearchRes
+{
+    Object data;
+    
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString((Object)this, ToStringStyle.JSON_STYLE);
+    }
+    
+    public void setError() {
+        this.data = null;
+    }
+    
+    public Object getData() {
+        return this.data;
+    }
+    
+    public void setData(final Object data) {
+        this.data = data;
+    }
+    
+    @Override
+    public boolean equals(final Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof SearchRes)) {
+            return false;
+        }
+        final SearchRes other = (SearchRes)o;
+        if (!other.canEqual((Object)this)) {
+            return false;
+        }
+        final Object this$data = this.getData();
+        final Object other$data = other.getData();
+        if (this$data == null) {
+            if (other$data == null) {
+                return true;
+            }
+        }
+        else if (this$data.equals(other$data)) {
+            return true;
+        }
+        return false;
+    }
+    
+    protected boolean canEqual(final Object other) {
+        return other instanceof SearchRes;
+    }
+    
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $data = this.getData();
+        result = result * 59 + (($data == null) ? 43 : $data.hashCode());
+        return result;
+    }
+}
